@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const FileDetail = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const FileDetail = () => {
       setLoading(false);
     } catch (error) {
       console.error("Error fetching file data:", error);
+      toast.error(error.response.data.error);
       setLoading(false);
     }
   };
