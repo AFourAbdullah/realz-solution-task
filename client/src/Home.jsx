@@ -17,6 +17,7 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setFileUploadLoading(true);
     const formData = new FormData();
 
